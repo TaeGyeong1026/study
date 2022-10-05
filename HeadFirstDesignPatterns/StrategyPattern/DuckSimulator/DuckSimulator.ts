@@ -1,3 +1,4 @@
+import FlyRocketPowered from "./Behaviors/FlyBehavior/FlyRocketPowered"
 import Duck, { DUCKS } from "./Ducks"
 
 export default class DuckSimulator {
@@ -12,6 +13,8 @@ export default class DuckSimulator {
 	play() {
 		this.duck.display(this.name)
 		this.duck.performQuack()
+		this.duck.performFly()
+		this.duck.setFlyBehavior(new FlyRocketPowered())
 		this.duck.performFly()
 		this.duck.swim()
 	}

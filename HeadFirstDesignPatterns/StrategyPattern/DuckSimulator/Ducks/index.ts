@@ -17,6 +17,14 @@ export default abstract class Duck {
 	display(name: string) {
 		console.log(`내 이름은 ${name}`)
 	}
+
+	// 동적 행동 지정
+	setFlyBehavior(fb: FlyBehavior) {
+		this.flyBehavior = fb
+	}
+	setQuackBehavior(qb: QuackBehavior) {
+		this.quackBehavior = qb
+	}
 }
 
 export enum DUCKS {
