@@ -27,6 +27,7 @@ export default class StatisticsDisplay implements Observer, DisplayElement {
 		this.analysis(updateData)
 		this.display()
 		this.weatherDataSet = updateData
+        this.weatherData.removeObserver(this)
 	}
 	display(): void {
 		const { avg, max, min } = this.weatherStatistic

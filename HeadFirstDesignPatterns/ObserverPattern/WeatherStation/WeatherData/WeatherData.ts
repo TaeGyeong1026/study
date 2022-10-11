@@ -11,9 +11,11 @@ export default class WeatherData implements Subject {
 	}
 
 	registerObserver(observer: Observer): void {
-		this.observers.push(observer);
+		this.observers.push(observer)
 	}
-	removeObserver(observer: Observer): void {}
+	removeObserver(observer: Observer): void {
+		this.observers = this.observers.filter((ob) => ob !== observer)
+	}
 	notifyObserver(): void {
 		this.observers.forEach((ob) => {
 			ob.update(this.weatherDataSet)

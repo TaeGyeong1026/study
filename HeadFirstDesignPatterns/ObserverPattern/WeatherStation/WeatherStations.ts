@@ -2,6 +2,7 @@ import WeatherData from "./WeatherData"
 import {
 	CurrentConditionDisplay,
 	ForecastDisplay,
+	RemovableDisplay,
 	StatisticsDisplay,
 } from "./Displays"
 import { WeatherDataSet } from "./type"
@@ -19,6 +20,7 @@ export default class WeatherStation {
 		)
 		const statisticsDisplay = new StatisticsDisplay(this.weatherData)
 		const forecastDisplay = new ForecastDisplay(this.weatherData)
+		const removableDisplay = new RemovableDisplay(this.weatherData)
 
 		updated.forEach((measurement) => {
 			this.weatherData.setMeasurements(measurement)
