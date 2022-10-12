@@ -22,10 +22,12 @@ export default class ForecastDisplay implements Observer, DisplayElement {
 		weatherData.registerObserver(this)
 	}
 
-	update(updateData: WeatherDataSet): void {
+	// update(updateData: WeatherDataSet): void {
+	update(): void {
+		const updateData = this.weatherData.getWeatherDataSet()
 		this.analysis(updateData)
-		this.display()
 		this.weatherDataSet = updateData
+		this.display()
 	}
 
 	display(): void {

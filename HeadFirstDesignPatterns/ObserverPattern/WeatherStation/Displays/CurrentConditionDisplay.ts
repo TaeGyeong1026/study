@@ -15,8 +15,10 @@ export default class CurrentConditionDisplay
 		weatherData.registerObserver(this)
 	}
 
-	update(updateData: WeatherDataSet): void {
-		this.weatherDataSet = updateData
+	// update(updateData: WeatherDataSet): void {
+	update(): void {
+		// this.weatherDataSet = updateData
+		this.weatherDataSet = this.weatherData.getWeatherDataSet()
 		this.display()
 	}
 	display(): void {

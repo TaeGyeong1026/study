@@ -4,7 +4,8 @@ export interface Subject {
 	notifyObserver(): void
 }
 export interface Observer {
-	update(updateData: WeatherDataSet): void
+	// update(updateData: WeatherDataSet): void
+	update(): void
 }
 export interface DisplayElement {
 	display(): void

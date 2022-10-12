@@ -12,8 +12,8 @@ export default class RemovableDisplay implements Observer, DisplayElement {
 		weatherData.registerObserver(this)
 	}
 
-	update(updateData: WeatherDataSet): void {
-		this.weatherDataSet = updateData
+	update(): void {
+		this.weatherDataSet = this.weatherData.getWeatherDataSet()
 		this.display()
 		this.weatherData.removeObserver(this)
 	}

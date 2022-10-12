@@ -18,7 +18,7 @@ export default class WeatherData implements Subject {
 	}
 	notifyObserver(): void {
 		this.observers.forEach((ob) => {
-			ob.update(this.weatherDataSet)
+			ob.update()
 		})
 	}
 
@@ -28,5 +28,9 @@ export default class WeatherData implements Subject {
 	setMeasurements(updatedMeasurements: WeatherDataSet) {
 		this.weatherDataSet = updatedMeasurements
 		this.measurementsChanged()
+	}
+
+	getWeatherDataSet(): WeatherDataSet {
+		return this.weatherDataSet
 	}
 }
