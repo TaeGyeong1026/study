@@ -10,7 +10,6 @@ export default class CurrentConditionDisplay
 	weatherData: WeatherData
 
 	constructor(weatherData: WeatherData) {
-		this.weatherDataSet = INIT_WEATHER_DATA_SET
 		this.weatherData = weatherData
 		weatherData.registerObserver(this)
 	}
